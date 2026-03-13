@@ -29,7 +29,7 @@ export default function Cabeca() {
           <input type="email"></input>
           <label className="descricao">Password</label>
           <PasswordInput />
-          <a href="#">forgot password?</a>
+          <a href="/login">forgot password?</a>
           <button type="button" className="register-button">
             Register
           </button>
