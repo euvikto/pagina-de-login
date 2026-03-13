@@ -1,0 +1,41 @@
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+input {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 40px;
+
+  height: 5vh;
+  background: transparent;
+  border: 1px solid #fafafa;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.password-container input {
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+.toggle-button {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  color: #fafafa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

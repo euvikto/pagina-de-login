@@ -1,0 +1,154 @@
+* {
+  color: #fafafa;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/claro.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1.2s ease;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/escuro.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: circle(0% at 58.6% 14%);
+  transition: clip-path 0.8s ease;
+  z-index: -1;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 2px;
+  margin-bottom: 4vh;
+}
+a {
+  text-decoration: none;
+}
+.caixaFora {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px;
+  width: 21%;
+  height: 60vh;
+  margin: 0 auto;
+  margin-top: 8vh;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+.campo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 35px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+input {
+  background: transparent;
+  border: 1px solid #fafafa;
+  border-radius: 12px;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-weight: 500;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 8px;
+}
+
+.register-button {
+  width: 100%;
+  height: 5vh;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #fafafa;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.register-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-button {
+  position: absolute;
+  top: 8%;
+  right: 9%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+body.dark::before {
+  background-image: url("../assets/escuro.svg");
+  opacity: 0;
+}
+
+body.dark::after {
+   clip-path: circle(150% at 90% 15%);
+}
+.caixaFora.dark {
+  color: #e2eaf2;
+}
+
+.caixaFora.dark input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2eaf2;
+}
+
+.caixaFora.dark h1 {
+  color: #e2eaf2;
+}
+.caixaFora.dark .descricao {
+  color: #8aa0b4;
+}
+.caixaFora.dark a {
+  color: #4a6a84;
+}
+
+.caixaFora.dark .register-button {
+  background: rgba(100, 160, 220, 0.25);
+  color: #a8d4f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
