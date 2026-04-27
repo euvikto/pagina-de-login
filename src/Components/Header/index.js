@@ -21,16 +21,24 @@ export default function Cabeca() {
         <h1>Register</h1>
 
         <form className="campo">
-          <label className="descricao">Full name</label>
-          <input></input>
-          <label className="descricao">
-            Email
-          </label>
-          <input type="email"></input>
-          <label className="descricao">Password</label>
-          <PasswordInput />
+          <div className="input-wrapper">
+            <input type="text" id="fullName" placeholder=""></input>
+            <label className="descricao">Full name</label>
+          </div>
+
+          <div className="input-wrapper">
+            <input type="email" id="email" placeholder=""></input>
+            <label className="descricao">Email</label>
+          </div>
+
+          <div className="input-wrapper">
+            <PasswordInput />
+            <label className="descricao">Password</label>
+          </div>
+
           <a href="/login">forgot password?</a>
           <button type="button" className="register-button">
+            {" "}
             Register
           </button>
         </form>

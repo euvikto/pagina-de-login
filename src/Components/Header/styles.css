@@ -1,8 +1,18 @@
 * {
-  color: #fafafa;
   font-family: "Roboto", sans-serif;
 }
 
+body,
+p,
+
+span,
+label,
+input,
+button,
+a {
+  color: #fafafa;
+  font-family: "Roboto", sans-serif;
+}
 body {
   position: relative;
 }
@@ -29,6 +39,7 @@ body::after {
   transition: clip-path 0.8s ease;
   z-index: -1;
 }
+
 h1 {
   text-align: center;
   font-size: 2rem;
@@ -36,9 +47,11 @@ h1 {
   padding-top: 2px;
   margin-bottom: 4vh;
 }
+
 a {
   text-decoration: none;
 }
+
 .caixaFora {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(25px);
@@ -56,11 +69,12 @@ a {
   border-radius: 10%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+
 .campo {
   width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 28px;
   margin: 35px;
 }
 
@@ -76,20 +90,51 @@ input {
   border: 1px solid #fafafa;
   border-radius: 12px;
   width: 100%;
-  height: 42px;
+  height: 53px;
   display: flex;
   margin: 0 auto;
   font-size: 1.4rem;
   font-weight: 500;
   outline: none;
   box-sizing: border-box;
-  padding-left: 8px;
+  padding: 14px 40px 4px 10px;
+  color: #fafafa;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper .descricao {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: rgba(250, 250, 250, 0.65) !important;
+  pointer-events: none;
+  transition:
+    top 0.25s ease,
+    font-size 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.input-wrapper input:focus + .descricao,
+.input-wrapper input:not(:placeholder-shown) + .descricao,
+.input-wrapper:focus-within .descricao,
+.input-wrapper input:not(:placeholder-shown) ~ .descricao {
+  top: 7px;
+  transform: translateY(0);
+  font-size: 0.68rem;
+  color: rgba(250, 250, 250, 0.5) !important;
 }
 
 .register-button {
   width: 100%;
   height: 5vh;
-  margin-top: 10px;
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -101,6 +146,7 @@ input {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .register-button:hover {
   background: rgba(255, 255, 255, 0.2);
   box-shadow:
@@ -118,15 +164,15 @@ input {
   cursor: pointer;
 }
 
-
 body.dark::before {
   background-image: url("../assets/escuro.svg");
   opacity: 0;
 }
 
 body.dark::after {
-   clip-path: circle(150% at 90% 15%);
+  clip-path: circle(150% at 90% 15%);
 }
+
 .caixaFora.dark {
   color: #e2eaf2;
 }
@@ -138,11 +184,13 @@ body.dark::after {
 }
 
 .caixaFora.dark h1 {
-  color: #e2eaf2;
+  color: #a0a5aa;
 }
+
 .caixaFora.dark .descricao {
-  color: #8aa0b4;
+  color: #8aa0b4 !important;
 }
+
 .caixaFora.dark a {
   color: #4a6a84;
 }
@@ -151,4 +199,11 @@ body.dark::after {
   background: rgba(100, 160, 220, 0.25);
   color: #a8d4f0;
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.caixaFora.dark .input-wrapper input:focus + .descricao,
+.caixaFora.dark .input-wrapper input:not(:placeholder-shown) + .descricao,
+.caixaFora.dark .input-wrapper:focus-within .descricao,
+.caixaFora.dark .input-wrapper input:not(:placeholder-shown) ~ .descricao {
+  color: #4a6a84 !important;
 }
